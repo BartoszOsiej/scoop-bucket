@@ -51,6 +51,7 @@ for tool in TOOLS:
             },
         },
     }
+    os.makedirs("bucket", exist_ok=True)
     path = f"bucket/{tool}.json"
     old = open(path).read() if os.path.exists(path) else ""
     new = json.dumps(manifest, indent=2)
